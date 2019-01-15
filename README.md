@@ -1,0 +1,1 @@
+This is the csci206 project that will contain all programming work for the course.
