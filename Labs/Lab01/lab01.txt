@@ -1,0 +1,21 @@
+Kartikeya Sharma
+CSCI206
+Lab01
+January 15, 2019
+
+1. mkdir -p ~/csci206/Labs/Lab01
+2. cat concatenates files and prints them to the standard output.
+   
+   more allows the user to page through content one 'screenful' at a time.
+   
+   less is like the more command but allows for backward and forward movement
+   in the file.
+
+   head outputs the first part of files.
+
+   tail outputs the last part of files.
+
+3. emacs -nw
+4. :set number
+5. M-x linum-mode
+6. After careful consideration, I will use vim in csci206 as my text editor. 
