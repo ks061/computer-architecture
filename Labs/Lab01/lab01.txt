@@ -3,8 +3,13 @@ CSCI206
 Lab01
 January 15, 2019
 
-1. mkdir -p ~/csci206/Labs/Lab01
-2. cat concatenates files and prints them to the standard output.
+1. [15 points] One line mkdir   ~/csci206/Labs/Lab01 command, and leaving your lab01.txt in the right place.
+
+mkdir -p ~/csci206/Labs/Lab01
+
+2. [5 point each] One sentence description of each of the following commands do: cat,  more,  less, head, and tail.
+
+   cat concatenates files and prints them to the standard output.
    
    more allows the user to page through content one 'screenful' at a time.
    
@@ -15,7 +20,18 @@ January 15, 2019
 
    tail outputs the last part of files.
 
-3. emacs -nw
-4. :set number
-5. M-x linum-mode
-6. After careful consideration, I will use vim in csci206 as my text editor. 
+3. [10 points] The complete command line to start up emacs without a GUI.
+
+emacs -nw
+
+4. [10 points] What is the command to show line numbers in vim?
+
+:set number
+
+5. [10 points] What is the command to show line numbers in emacs?
+
+M-x linum-mode
+
+6. [10 points] Complete this sentence in your file: After careful consideration, I will use <vim or emacs> in csci206 as my text editor.
+
+After careful consideration, I will use vim in csci206 as my text editor. 
