@@ -13,11 +13,11 @@ cat concatenates files and prints them to the standard output.
    
 more allows the user to page through content one 'screenful' at a time.
    
-less is like the more command but allows for backward and forward movement in the file.
+less is like the more command but also allows for backward and forward movement in the file.
 
-head outputs the first part of (a) file(s); by default, head reads the first 10 lines of (a) file(s).
+head displays the first part of (a) file(s); by default, head displays the first 10 lines of (a) file(s).
 
-tail outputs the last part of (a) file(s); by default, tail reads the last 10 lines of (a) file(s).
+tail displays the last part of (a) file(s); by default, tail displays the last 10 lines of (a) file(s).
 
 3. [10 points] The complete command line to start up emacs without a GUI.
 
