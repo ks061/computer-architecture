@@ -1,9 +1,13 @@
 /* Kartikeya Sharma
  * Date: January 22, 2019
+ * Section: CSCI206L - 61
  * Time: 1 PM
- * lab 02 - isalary.c
+ * lab 02 - fsalary.c
  * compile with: make fsalary
- * notes: none
+ * notes: This program takes in an hourly wage
+ *        and the number of weeks worked to derive
+ *        the annual salary for an employee.
+ *        This assumes a 40 hour work week.
  */
 
 #include <stdio.h>

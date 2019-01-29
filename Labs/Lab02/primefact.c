@@ -4,7 +4,9 @@
  * Time: 1 PM
  * lab 02 - primefact.c
  * compile with: make primefact
- * notes: none
+ * notes: The goal of this program is to
+ * 	  compute all of the prime factors
+ * 	  of a given number.
  * 
  * Output:
  *

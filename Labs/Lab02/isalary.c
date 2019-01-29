@@ -3,7 +3,10 @@
  * Time: 1 PM
  * lab 02 - isalary.c
  * compile with: make isalary
- * notes: none
+ * notes: This program takes in an hourly
+ * 	  wage as an integer and returns
+ * 	  the annual salary of an employee.
+ * 	  This assumes a 40 hour work week.
  */
 
 #include <stdio.h>

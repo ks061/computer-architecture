@@ -3,7 +3,11 @@
  * Time: 1 PM
  * lab 02 - switchcase.c
  * compile with: make switchcase
- * notes: none
+ * notes: The goal of this program
+ * 	  is to take in strings and
+ * 	  print them out with
+ * 	  each character being converted
+ * 	  to an upper case character.
  */
 
 #include <stdio.h>
