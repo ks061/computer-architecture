@@ -11,7 +11,7 @@ Exercise 1: gdb
 
 You use the -g flag when compiling the program so that you get extra debugging information in gdb.
 
-For example, typing "cc -g sourcefile.c" without any quotes and replacing sourcefile.c with the
+For example, typing "cc -g sourcefile.c" or "gcc -g sourcefile.c" without any quotes and replacing sourcefile.c with the
 name of the C source file being compiled.
 
 2. What is the syntax of the command to set a breakpoint at line 50 that you 
@@ -36,7 +36,7 @@ set variable count = 42
 Exercise 2: MIPS Registers
 
 $zero is a register that holds the constant value 0. This register is specifically hard-wired
-to the value 0. For example, because MIPS do not have a copy function, one can copy a value from
+to the value 0. For example, because MIPS does not have a copy function, one can copy a value from
 $s1 to $t1 by running the following command: add $t1, $s1, $zero. 
 
 $at is called the "Assembler Temporary" register. It is used by the assembler as a temporary value 
@@ -51,7 +51,8 @@ $v0-$v1 are registers that store values evaluated by expressions or returned by 
 load a suitable system call code with the "li $v0, 1" command, for example.
 
 $a0-$a3 are "Argument" registers that store arguments to functions. They collectively hold
-arguments 1-4. To load a parameter stored in local memory, one might run a "la $a0, <string>" command.
+arguments 1-4. To load a parameter stored in local memory, one might run a "la $a0, 
+<string_variable_name>" command.
 
 $t0-$t9 are registers, known as "Temporary Registers," that serve as temporary value holders. They are known as "caller-saved registers."
 These registers temporarily hold values that do not need to be saved when the program moves on from
@@ -62,8 +63,8 @@ command: add $t1, $t2, $t3.
 $s0-$s7 are registers, known as "Saved Registers," that also serve as temporary value holders, except they continue holding values when
 the program moves on from one call to another. They are known as "callee-saved registers." The callee assumes
 that these values will be available when the function returns. An example of using these registers is subtracting
-the value stored in $t3 from that stored in $t2 and store the computed value into $t1 by using the following
-command: sub $t1, $t2, $t3.
+the value stored in $t3 from that stored in $t2 and store the computed value into $s1 by using the following
+command: sub $s1, $t2, $t3.
 
 $gp is a register that holds a global pointer. Within a static data segment, this pointer points to the middle of 
 a block of memory that is 64 KB in size. It holds addresses static global variables. To store a word from register to
