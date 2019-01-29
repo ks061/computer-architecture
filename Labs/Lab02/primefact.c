@@ -6,7 +6,7 @@
  * compile with: make primefact
  * notes: The goal of this program is to
  * 	  compute all of the prime factors
- * 	  of a given number.
+ * 	  of a given number in C.
  * 
  * Output:
  *
