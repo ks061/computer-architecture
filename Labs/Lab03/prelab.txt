@@ -1,0 +1,190 @@
+Kartikeya Sharma
+Lab Time: 1 PM
+Lab Number: 61 (CSCI206L)
+Date: January 29, 2019
+Lab 3: Prelab
+
+Exercise 1: gdb
+
+1. How do you compile your program so that you get extra debugging information 
+   (variable and function names, line numbers, and so on) in gdb?
+
+You use the -g flag when compiling the program so that you get extra debugging information in gdb.
+
+For example, typing "cc -g sourcefile.c" without any quotes and replacing sourcefile.c with the
+name of the C source file being compiled.
+
+2. What is the syntax of the command to set a breakpoint at line 50 that you 
+   would type at the gdb prompt?
+
+b 50
+
+
+3. Assume that your program has an integer called count, that you started the
+   execution of the program in gdb and that it is stopped at a breakpoint: 
+   what is the syntax of the gdb command to print the value of count?
+
+disp count
+
+4. Again, assume that your program is stopped at a breakpoint in gdb, what is
+   the syntax of the command to change the value of the integer count to 42?
+
+set variable count = 42
+
+
+
+Exercise 2: MIPS Registers
+
+$zero is a register that holds the constant value 0. This register is specifically hard-wired
+to the value 0. For example, because MIPS do not have a copy function, one can copy a value from
+$s1 to $t1 by running the following command: add $t1, $s1, $zero. 
+
+$at is called the "Assembler Temporary" register. It is used by the assembler as a temporary value 
+holder. Because of this, compilers and user programs should not be using these registers. For 
+example, when the slt $at, $a1, $s3 command is run, $at is set to 1 if $a1 is less than $s3; 
+otherwise, $a1 is set to 0.
+
+$k0-$k1 are registers, known as "Kernel Reserved" registers, that aid the OS kernel/operating system. 
+Because of this, compilers and user programs should not be using these registers.
+
+$v0-$v1 are registers that store values evaluated by expressions or returned by functions. Such a register might
+load a suitable system call code with the "li $v0, 1" command, for example.
+
+$a0-$a3 are "Argument" registers that store arguments to functions. They collectively hold
+arguments 1-4. To load a parameter stored in local memory, one might run a "la $a0, <string>" command.
+
+$t0-$t9 are registers, known as "Temporary Registers," that serve as temporary value holders. They are known as "caller-saved registers."
+These registers temporarily hold values that do not need to be saved when the program moves on from
+one call to another. The callee uses values stored in these registers without saving them. An example of
+using these registers is storing the sum of the values stored in $t2 and $t3 in $t1 by using the following
+command: add $t1, $t2, $t3. 
+
+$s0-$s7 are registers, known as "Saved Registers," that also serve as temporary value holders, except they continue holding values when
+the program moves on from one call to another. They are known as "callee-saved registers." The callee assumes
+that these values will be available when the function returns. An example of using these registers is subtracting
+the value stored in $t3 from that stored in $t2 and store the computed value into $t1 by using the following
+command: sub $t1, $t2, $t3.
+
+$gp is a register that holds a global pointer. Within a static data segment, this pointer points to the middle of 
+a block of memory that is 64 KB in size. It holds addresses static global variables. To store a word from register to
+memory, the "sw $t0, 14($gp)" command can be used, where $t0 is stored in memory from an offset away from the address stored
+in $gp.
+
+$sp is a stack pointer. The stack pointer serves as a pointer to the location on the stack that was last allocated.
+To shrink the stack to pop arguments off, a command in the following format may be used: "addi $sp, $sp, 4 * <amount of arguments>".
+
+$fp is a register that holds a frame pointer. Within a particular function invocation, the frame pointer stores a
+duplicate of the stack pointer from before the function was called.
+
+$ra is a register that holds a return address. The return address specifies the point in the code right before 
+the subroutine that is currently being executed was called. This register may be used when trying to jump to 
+the return address by using the "jr $ra" command.
+
+
+
+Exercise 3: Simple MIPS Instructions
+
+1. add $s1, $s2, $s3
+   (a) Adds the values contained in the two source registers; stores the result into the destination register. Effectively: $s1 = $s2 + $s3.
+   (b) Source Registers: $s2, $s3
+   (c) Destination Register: $s1
+2. addi $s1, $s3, 2
+   (a) Adds the value contained in the register and the value of the specified constant; stores the result into the destination register. Effectively: $s1 = $s3 + 2.
+   (b) Source Registers: $s3
+   (c) Destination Register: $s1
+3. lw $t6, 4($s0)
+   (a) Loads a word from memory to register. Effectively: $t6 = Memory[$s0 + 4]
+   (b) Source Registers: $s2
+   (c) Destination Register: $t6
+4. add $t3, $s1, $s2
+   (a) Adds the values contained in the two source registers; stores the result into the destination register. Effectively: $t3 = $s1 + $s2.
+   (b) Source Registers: $s1, $s2
+   (c) Destination Register: $t3
+5. sub $v0, $t1, $s2
+   (a) Subtracts the values contained in the two source registers; stores the result into the destination register. Effectively: $v0 = $t1 - $s2.
+   (b) Source Registers: $t1, $t2
+   (c) Desintation Register: $v0
+
+
+
+Exercise 4: Working in different bases
+
+1. 59 (base 10) to 8-bit binary
+
+Converting from base 10 to binary:
+             
+59 / 2 = 29 R 1
+29 / 2 = 14 R 1
+14 / 2 = 7 R 0
+7 / 2 = 3 R 1
+3 / 2 = 1 R 1
+1 / 2 = 0 R 1
+
+Most significant bit (MSB) to least significant bit (LSB), this number is 111011b.
+
+111011b needs to be padded with 2 0's to make the number 8-bit.
+
+8-bit binary: 00111011b
+
+
+
+2. 10111011 (base 2) to 8-bit hexadecimal
+
+Converting from base 2 to hexadecimal:
+
+1011 = 2^3 + 2^1 + 2^0 = 8 + 2 + 1 = 11 -> B
+1011 = 2^3 + 2^1 + 2^0 = 8 + 2 + 1 = 11 -> B
+
+0xBB needs to be padded with 6 0's to make the number 8-bit.
+
+8-bit hexadecimal: 0x000000BB
+
+
+
+3. 129 (base 10) to 8-bit hexadecimal
+
+Converting from base 10 to binary (first):
+
+129 / 2 = 64 R 1
+64 / 2 = 32 R 0
+32 / 2 = 16 R 0
+16 / 2 = 8 R 0
+8 / 2 = 4 R 0
+4 / 2 = 2 R 0
+2 / 2 = 1 R 0
+1 / 2 = 0 R 1
+ 
+MSB to LSB, this number if 10000001b.
+
+Converting from binary to hexadecimal (second): 
+
+1000 = 2^3 = 8 -> 8
+0001 = 2^0 = 1 -> 1
+
+0x81 needs to be padded with 6 0's to make the number 8-bit.
+
+8-bit hexadecimal: 0x00000081
+
+
+
+4. 0xFEEDBEEF (base 16) to binary (use as many bits as required)
+
+F = 1111
+E = 1110
+E = 1110
+D = 1101
+B = 1011
+E = 1110
+E = 1110
+F = 1111
+
+11111110111011011011111011101111b
+
+5. 0743 (base 8) to binary (use as many bits as required)
+
+0 -> 000
+7 = 2^2 + 2^1 + 2^0 -> 111
+4 = 2^2 -> 100
+3 = 2^1 + 2^0 -> 011
+
+000111100011b
