@@ -24,7 +24,7 @@ b 50
    execution of the program in gdb and that it is stopped at a breakpoint: 
    what is the syntax of the gdb command to print the value of count?
 
-disp count
+p count
 
 4. Again, assume that your program is stopped at a breakpoint in gdb, what is
    the syntax of the command to change the value of the integer count to 42?
@@ -90,11 +90,11 @@ Exercise 3: Simple MIPS Instructions
    (c) Destination Register: $s1
 2. addi $s1, $s3, 2
    (a) Adds the value contained in the register and the value of the specified constant; stores the result into the destination register. Effectively: $s1 = $s3 + 2.
-   (b) Source Registers: $s3
+   (b) The operands are the source register $s3 and the value 2.
    (c) Destination Register: $s1
 3. lw $t6, 4($s0)
    (a) Loads a word from memory to register. Effectively: $t6 = Memory[$s0 + 4]
-   (b) Source Registers: $s2
+   (b) The operands are the source register $s0 and the value 4.
    (c) Destination Register: $t6
 4. add $t3, $s1, $s2
    (a) Adds the values contained in the two source registers; stores the result into the destination register. Effectively: $t3 = $s1 + $s2.
@@ -187,4 +187,4 @@ F = 1111
 4 = 2^2 -> 100
 3 = 2^1 + 2^0 -> 011
 
-000111100011b
+111100011b
