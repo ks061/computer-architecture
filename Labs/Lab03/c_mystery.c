@@ -32,7 +32,9 @@ int main() {
                  // representation, representing the next positive
                  // integer to be added to the value stored in the
                  // t1 register representation, by 1
-    } while (t0 <= 10); // loop performed 11 times
+    } while (t0 <= 10); // statements in loop executed until the
+                        // value stored in the t0 register representation
+                        // variable is greater than 10
     
     x = t1; // store the aforecalculated sum from the t1 register
             // register representation in the variable x 
