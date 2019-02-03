@@ -1,0 +1,33 @@
+------------------------------------------------------------
+Lab02 feedback for Kartikeya Sharma (ks061)
+------------------------------------------------------------
+prelab: [25 points] Prelab reading / activities (zybook).
+	Score: 25 / 25
+	Comment: Great Job!
+
+isalary: ex1 salary and isalary correct and have all header information.
+	Score: 10 / 10
+	Comment: Great Job!
+
+nogood and fsalary: nogood and fsalary correct and compile without warning with -Wall. -5 for each
+warning, -15 for an error
+	Score: 20 / 20
+	Comment: Great Job!
+
+as and ld: nogood.s and nogood.o exist.
+	Score: 10 / 10
+	Comment: Great Job!
+
+cvp: primefact.py and primefact.c exist, compile without warning, and speedup is
+reasonable (noted in primefact.c).
+	Score: 25 / 25
+	Comment: Great Job!
+
+change case: switchcase.c compiles without warning and operates correctly.
+	Score: 10 / 10
+	Comment: Great Job!
+
+------------------------------------------------------------
+TOTAL 100.0 / 100.0
+------------------------------------------------------------
+
