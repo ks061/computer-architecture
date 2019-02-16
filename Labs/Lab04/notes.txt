@@ -1,0 +1,40 @@
+Kartikeya Sharma
+February 5, 2019 @ 1 PM
+lab 04 - notes.txt
+notes: This text file contains
+       responses to questions
+       involving taking notes
+       on particular C
+       commands via reading
+       their respective manual
+       pages.
+
+Exercise 2
+
+creat creates file if that said file does not exist at the given pathname. 
+If the file already exists at that pathname, the file will be truncated 
+and can only be written to. The command ultimately returns a file 
+descriptor, which is lowest-available nonnegative integer referring to 
+a specific file. Such unique numbers are assigned to files that are open 
+for the currently running process. 
+
+open opens a file at the given pathname. The command ultimately returns
+the lowest-available nonnegative integer referring to a specific file. 
+Such unique numbers are assigned to files that are open for the 
+currently running process.
+
+read reads bytes of data from the file represented by the inputted
+file descriptor and stores them in memory starting at the inputted
+buf. It returns the number of bytes that have been read; if an
+error occurs whilst reading the file, -1 is returned.
+
+write writes bytes of data from memory starting at the inputted buf 
+to the file represented by the inputted file descriptor. It returns
+the number of bytes that have been written; if an error occurs
+whilst writing the file, -1 is returned.
+
+close closes the file represented by the inputted file descriptor. After
+a file has been closed, the file descriptor no longer refers to a
+particular file and, hence, is avaiable to be used to refer to another
+file. It returns 0 on successful closure of the file; if an error
+occurs whilst closing the file, -1 is returned.
