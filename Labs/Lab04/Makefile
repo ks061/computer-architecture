@@ -9,19 +9,28 @@
 # Definition of variable names
 CC=gcc
 CFLAGS=-Wall
-ALL = head2
+ALL = head2 head3
 
-# Generate instructions to generate all files
+# Directive to build all files if no
+# arguments given with make
 all: $(ALL)
 
-# Instructions on generating the head2 executable
+# Instructions on generating head2 executable
 head2: head2.o fileio.o
 	$(CC) head2.o fileio.o -o $@
 
-# Instructions on generating the head2 object file
+# Instructions on generating head2 object file
 head2.o: head2.c fileio.h
 	$(CC) $(CFLAGS) -c $<
 
-# Instructions on generating the fileio object file
+# Instructions on generating head3 executable
+head3: head3.o fileio.o
+	$(CC) head3.o fileio.o -o $@
+
+# Instructions on generating head3 object file
+head3.o: head3.c fileio.h
+	$(CC) $(CFLAGS) -c $<
+
+# Instructions on generating fileio object file
 fileio.o: fileio.c fileio.h
 	$(CC) $(CFLAGS) -c $<

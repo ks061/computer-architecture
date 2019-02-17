@@ -21,13 +21,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Maximum number of bytes
+// Maximum amount of data
 // that will be read onto
 // the screen
 #define MAXBYTES 1024
+#define MAXLINES 10
 
 /*
- * Reads byte data from a file and append a null terminator (byte value 
+ * Reads byte data from a file and appends a null terminator (byte value 
  * of zero, 0).
  *
  * filename: full path and filename to read from.
@@ -36,5 +37,16 @@
  * Return value: number of bytes read or -1 on error.
  */
 int read_file_bytes(char* filename, int bytes, char* buffer);
+
+/*
+ * Reads lines of data from a file and appends a null terminator (byte 
+ * value of zero, 0).
+ *
+ * file_descriptor: file descriptor referring to the file
+ *                  to be read
+ * buffer: where to put the read data
+ * Return value: number of lines read or -1 on error.
+ */
+int read_file_lines(int file_descriptor, char buffer[][MAXBYTES+1]);
 
 #endif
