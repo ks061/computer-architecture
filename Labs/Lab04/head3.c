@@ -53,11 +53,8 @@ int main(int argc, char* argv[])
     int read_status = read_file_lines(file_descriptor, buffer); 
     if (read_status >= 0) {
         int num_line;
-        int num_byte;
         for (num_line = 0; num_line < MAXLINES; num_line++) {
-            for (num_byte = 0; num_byte < MAXBYTES+1; num_byte++) {
-                printf("%c", buffer[num_line][num_byte]);
-            }
+            printf("%s", buffer[num_line]);
         }
     } else if (read_status == -1) {
         printf("Error: could not close file %s\n", argv[1]);

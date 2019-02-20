@@ -20,7 +20,7 @@
 #define MAXBYTES 1024
 
 /*
- * Reads byte data from a file and append a null terminator (byte value 
+ * Reads byte data from a file and appends a null terminator (byte value 
  * of zero, 0).
  *
  * filename: full path and filename to read from.

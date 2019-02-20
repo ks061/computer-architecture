@@ -94,7 +94,7 @@ void div_calc(int argc, char* argv[])
  */
 void insuff_num_operands(int argc, char* argv[]) {
     printf("Unsupported arguments for the %s function.\
-            %d were needed, yet %d were provided.",\
+            \n%d were needed, yet %d were provided.\n",\
             argv[OP_INDEX], MIN_CMD_LINE_ARGS + 1,\
             argc);
 }

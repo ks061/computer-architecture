@@ -50,7 +50,8 @@ int read_file_bytes (char* filename, int bytes, char* buffer)
  *
  * Return value: number of characters fast forwarded
  */
-int ff_until_new_line(FILE *file_pointer) {
+int ff_until_new_line(FILE *file_pointer) 
+{
     int num_char_read = 0;
     int char_read = 0;
     while (char_read != (int) '\n' && (int) char_read != -1) {
@@ -75,13 +76,6 @@ int read_file_lines(int file_descriptor, char buffer[][MAXBYTES+1])
     int num_lines_read = 0;
     while ((fgets(buffer[num_lines_read], MAXBYTES+1, file_pointer) != NULL)\
            && (num_lines_read < MAXLINES)) {
-        fseek(file_pointer, -1, SEEK_CUR);
-        if (fgetc(file_pointer) != '\n' &&\
-            fgetc(file_pointer) != EOF) {
-            if (ff_until_new_line(file_pointer) > 0) {
-                buffer[num_lines_read][MAXBYTES] = '\n';
-            }
-        }
         num_lines_read++;
     }
 

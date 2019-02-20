@@ -25,30 +25,6 @@ main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    /*
-    // Opening the file
-    int file_descriptor = open(argv[1], O_RDONLY);
-    if (file_descriptor == -1) {
-        printf("Error occured while trying to open the file.\
-                Please check the inputted file path.");
-        exit(-1);
-    }
-    
-    // Declaring string (char array)
-    char str[MAXLINES * (MAXBYTES + 1)];
-
-    // Importing 2D array into string (char array)
-    int num_line;
-    int num_byte;
-    int index;
-    for (num_line = 0; num_line < MAXLINES; num_line++) {
-        for (num_byte = 0; num_byte < MAXBYTES+1; num_byte++) {
-            index = num_line * (MAXBYTES + 1) + num_byte;
-            str[index] = buffer[num_line][num_byte];
-        }
-    }
-    */
-    
     // Opening the file
     FILE *file_pointer = fopen(argv[1], "r");
 
