@@ -45,23 +45,6 @@ int read_file_bytes (char* filename, int bytes, char* buffer)
 }
 
 /*
- * Fast forwards a file pointer's file position indicator
- * until a new line is reached.
- *
- * Return value: number of characters fast forwarded
- */
-int ff_until_new_line(FILE *file_pointer) 
-{
-    int num_char_read = 0;
-    int char_read = 0;
-    while (char_read != (int) '\n' && (int) char_read != -1) {
-        char_read = fgetc(file_pointer);
-        num_char_read++;
-    }
-    return num_char_read; 
-}
-
-/*
  * Reads lines of data from a file and appends a null terminator (byte 
  * value of zero, 0).
  *
