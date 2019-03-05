@@ -32,7 +32,7 @@ int find_length(int n)
     // If the value of n is greater than 1, the find_length() function
     // would call the collatz function recursively.
     int computed_num = n;
-    int count = 0;
+    int count = 1;
     while (computed_num != 1) {
         computed_num = collatz(computed_num);
         count++;
