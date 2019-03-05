@@ -8,13 +8,14 @@
 
 #include <stdio.h>
 
-extern int counte(char **);
+extern int counte(char*);
 
 int main(void) {
-    char *string;
-    printf("Enter a string:");
-    scanf("%s", &string);
-    printf("There are %d e's\n", counte(&string));
+    // char* string = NULL;
+    printf("Enter a string: ");
+    // scanf("%s", string);
+    char* string = "hellococo";
+    printf("There are %d e's\n", counte(string));
     
     return 0;
 }
