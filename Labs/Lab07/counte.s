@@ -13,13 +13,12 @@
 counte:
 	move $t2, $a0 # $t2 contains the address of string[0]
 	
-        add $t4, $zero, $zero # init $t4 (number of e's in the string)
+        li $t4, 0 # init $t4 (number of e's in the string)
         li $t1, 'e'
-        li $t3, '\0'
 loop:
 	lb $t0, 0($t2) # load the character referred to by $t2 into $t0
 	
-	beq $t0, $t3, end       # if character read is the null terminator
+	beqz $t0, end       # if character read is the null terminator
                                 # end the function
 	nop
 	

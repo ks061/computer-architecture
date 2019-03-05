@@ -7,15 +7,15 @@
  */
 
 #include <stdio.h>
+#define MAX_CHARS 200
 
 extern int counte(char*);
 
 int main(void) {
-    // char* string = NULL;
+    char input_string[MAX_CHARS];
     printf("Enter a string: ");
-    // scanf("%s", string);
-    char* string = "hellococo";
-    printf("There are %d e's\n", counte(string));
+    fgets(input_string, MAX_CHARS, stdin);
+    printf("There are %d e's\n", counte(input_string));
     
     return 0;
 }
