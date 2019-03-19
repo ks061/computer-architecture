@@ -1,0 +1,32 @@
+------------------------------------------------------------
+Lab07 feedback for Kartikeya Sharma (ks061)
+------------------------------------------------------------
+prelab: zyBook: zyBook activities >80% complete.
+	Score: 10 / 10
+	Comment: Great Work!
+
+exit.s: successfully modified exit.s.
+	Score: 5 / 5
+	Comment: Great Work!
+
+primes.c: primes C created with correct is_prime function [5 points]. Benchmark results
+from mips machine for 10,020 primes added to primes.c as a comment [5 points].
+	Score: 10 / 10
+	Comment: Great Work!
+
+is_prime: is_prime.s works and benchmarked in primes2.c and Makefile builds primes2.
+    Score: 15 / 15
+
+counte: counte implemented in C/asm and compiles with Makefile.
+    Score: 20 / 20
+
+matrix_sum: matrix_sum.c/s correct and compiles with Makefile.
+    Score: 20 / 20
+
+time: time.c/s correct and compiles with Makefile.
+    Score: 20 / 20
+
+------------------------------------------------------------
+TOTAL 100.0 / 100.0
+------------------------------------------------------------
+
