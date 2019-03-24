@@ -9,9 +9,9 @@ struct snode *n1, *n2, *n3, *p;
 int main(int argc, char *argv[]) {
  
   // create snodes
-  n1 = snode_create("hello");
-  n2 = snode_create("there");
-  n3 = snode_create("prof");
+  n1 = snode_create("hello", 5);
+  n2 = snode_create("there", 5);
+  n3 = snode_create("prof", 4);
  
   printf("snode_test running...\n");
  
@@ -26,17 +26,10 @@ int main(int argc, char *argv[]) {
   while (p != NULL) {
     // Complete this line to print the current node's string and   
     // the stored length (do not use strlen!)
-    printf("str: %s - length: %zu\n", p->str, strlen(p->str));
+    printf("str: %s - length: %d\n", p->str, p->length);
  
     p = p->next;
   }
-  
-  snode_destroy(n1);
-  n1 = NULL;
-  snode_destroy(n2);
-  n2 = NULL;
-  snode_destroy(n3);
-  n3 = NULL;
-
+ 
   return 0;
 }
