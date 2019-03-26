@@ -1,0 +1,27 @@
+The assumption in this assignment, as supported by Professor Fuchsberger, is
+that we are only dealing with floating point representations that are normalized.
+
+At first, I thought that the largest number was represented by
+0 11111111 11111111111111111111111. However, after looking up this value
+in the lecture notes, I realized that values with exponents that are
+all 1 are reserved for infinity/NaN. Hence, the next largest exponent that can be
+used to represent a large single-precision floating point number is 11111110. 
+Moreover, a mantissa with all 1 bits will also help maximize the value of the number 
+without conflicting with special single-precision floating point representations. 
+This value of this single-precision floating point number representation
+is calculated by doing 2^(254-127) * 1.11111111111111111111111, which equals 
+approximately 3.4028235E+38. The minimum single-precision floating-point number cannot 
+be represented with all 0 bits in both the exponent slot because we are not looking
+at 0 or denormalized numbers. So, we will make the exponent as small as possible (1)
+and leave the mantissa as 0. This gives us 2^(-126), which is 1.175*10^(-38).
+
+
+We take a similar approach for computing the maximum and positive minimum values for
+double-precision floating-point numbers. Using a similar approach as the one above, the 
+exponent is 11111111110. This is 2046; when subtracted by 1023, we get 1023. The
+mantissa will be filled with all 1's again. So, the answer is 2^(1023) * 2 is about
+2^(1024) or about 1.798E308.
+
+Similarly, the exponent will be 1 and mantissa will have all 0 bits. So, we get
+2^(1-1023), which is about 2.225E-308.
+
