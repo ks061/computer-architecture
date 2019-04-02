@@ -10,7 +10,6 @@
  */
 
 #include "fileio.h"
-#include "string.h"
 
 /*
  * Reads byte data from a file and appends a null terminator (byte value 
@@ -54,19 +53,20 @@ int read_file_bytes (char* filename, int bytes, char* buffer)
  * buffer: where to put the read data
  * Return value: number of lines read or -1 on error (failure to close).
  */
-int read_file_lines(int file_descriptor, char buffer[MAXLINES][MAXBYTES+1])
+int read_file_lines(int file_descriptor, char buffer[][MAXBYTES+1])
 {
     FILE *file_pointer = fdopen(file_descriptor, "r");
     int num_lines_read = 0;
     while ((fgets(buffer[num_lines_read], MAXBYTES+1, file_pointer) != NULL)\
            && (num_lines_read < MAXLINES)) {
-        printf("string length: %d\n",strlen(buffer[num_lines_read]));
-    	num_lines_read++;
+        num_lines_read++;
     }
 
+    buffer[MAXLINES-1][MAXBYTES] = '\0';
+ 
     int close_status = fclose(file_pointer);
     if (close_status < 0) {
-    	return -1;
+        return -1;
     }
     
     return num_lines_read;
