@@ -23,9 +23,10 @@ The disassembled code looks so different because it is uniquely assembled rather
 
 (1.6) The program structure explained in the Smashing the Stack paper differs from how our mips does things, though the concept is the same. In the paper, the local variables are arranged from high stack address value (deeper inside the stack) [(int *ret)] [buffer2][buffer1]. In our mips machine, the arrangement is different. Run gdb and disassemble the function main() and function(), save these output (numbered assembly code) into two text files for your reference. Then run the program in gdb and stop at the function function(). Examine the addresses of the local variables, ret, buffer1, and buffer2. Record these addresses and explain them in your prelab.txt.
 
-ret: 0x7fffe554
-buffer1: 0x7fffr53c
-buffer2: 0x7fff544
+buffer2: 0x7fffe534 (added 8 bytes)
+buffer1: 0x7fffe52c (added 4 bytes)
+ret: 0x7fffe528 (added 24 bytes)
+sp: 0x7fffe510
 
 (1.7) Now explain why the two values 24 and 16 are used in the function function().
 
