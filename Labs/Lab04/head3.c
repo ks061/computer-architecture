@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
     }
 
     // Reading the file
-    int read_status = read_file_lines(file_descriptor, buffer); 
+    int read_status = read_file_lines(argv[1], buffer); 
     if (read_status >= 0) {
         int num_line;
         for (num_line = 0; num_line < MAXLINES; num_line++) {

@@ -21,7 +21,7 @@ main(int argc, char *argv[])
     char * delim = " ;=$(){}#+,<>\"[]*'/!%&:\\\n\r\t";
 
     if (argc !=2) {
-        printf("./string_token <file name>");
+        printf("./string_token <file name>\n");
         exit(EXIT_FAILURE);
     }
 
@@ -30,8 +30,8 @@ main(int argc, char *argv[])
 
     if (file_pointer == NULL) {
         printf("File could not be opened.\
-                Please check the inputted\
-                filepath.");
+ Please check the inputted\
+ filepath.\n");
         exit(EXIT_FAILURE);
     }
 
