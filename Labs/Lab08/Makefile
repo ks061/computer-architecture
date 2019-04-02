@@ -28,7 +28,7 @@ snode_test: snode_test.o snode.o
 	$(CC) $(CFLAGS) $^ -o $@
 
 # Instructions on generating snode_test object file
-snode_test.o: snode_test.c snode.h
+snode_test.o: snode_test.c snode.o
 	$(CC) $(CFLAGS) -c $<
 
 # Instructions on generating song_list executable
@@ -36,7 +36,7 @@ song_list: song_list.o snode.o slist.o
 	$(CC) $(CFLAGS) $^ -o $@
 
 # Instructions on generaitng song_list object file
-song_list.o: song_list.c snode.h slist.h
+song_list.o: song_list.c snode.o slist.o
 	$(CC) $(CFLAGS) -c $<
 
 # Instructions on generating clean executable

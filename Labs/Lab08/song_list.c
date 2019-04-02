@@ -8,7 +8,6 @@
 
 #include <stdio.h>
 #include "slist.h"
-#include "snode.h"
 
 struct slist *song_list;
 

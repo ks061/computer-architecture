@@ -6,7 +6,6 @@
  * 	  lists.
  */
 
-#include "snode.h"
 #include "slist.h"
 
 /**
