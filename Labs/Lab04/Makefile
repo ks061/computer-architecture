@@ -8,7 +8,7 @@
 
 # Definition of variable names
 CC=gcc
-CFLAGS=-Wall
+CFLAGS=-Wall -g
 ALL = head2 head3 string_token
 
 # Directive to build all files if no

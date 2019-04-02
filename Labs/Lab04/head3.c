@@ -50,19 +50,21 @@ int main(int argc, char* argv[])
     }
 
     // Reading the file
-    int read_status = read_file_lines(file_descriptor, buffer); 
-    if (read_status >= 0) {
+    int num_lines_read = read_file_lines(file_descriptor, buffer); 
+    if (num_lines_read >= 0) {
         int num_line;
-        for (num_line = 0; num_line < MAXLINES; num_line++) {
+        printf("num_lines_read: %d\n", num_lines_read);
+	for (num_line = 0; num_line < num_lines_read; num_line++) {
             printf("%s", buffer[num_line]);
         }
-    } else if (read_status == -1) {
+	printf("end of for\n");
+    } else if (num_lines_read == -1) {
         printf("Error: could not close file %s\n", argv[1]);
         exit(-4);
     } else {
         printf("Error: could not read file!\n");
         exit(-5);
     }
-
+    printf("before end\n");
     return 0;
 }

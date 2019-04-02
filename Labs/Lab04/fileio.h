@@ -47,6 +47,6 @@ int read_file_bytes(char* filename, int bytes, char* buffer);
  * buffer: where to put the read data
  * Return value: number of lines read or -1 on error.
  */
-int read_file_lines(int file_descriptor, char buffer[][MAXBYTES+1]);
+int read_file_lines(int file_descriptor, char buffer[MAXLINES][MAXBYTES+1]);
 
 #endif
