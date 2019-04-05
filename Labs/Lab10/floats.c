@@ -42,7 +42,7 @@ void inspect_float(float num)
     unsigned num_int = f2u(num);
     unsigned sign = (num_int >> 31) & 0x1;
     unsigned exponent = (num_int >> 23) & 0xff;
-    unsigned mantissa = (num_int << 23) >> 23;
+    unsigned mantissa = (num_int << 9) >> 9;
     printf("sign = %u", sign);
     printf(", exponent = 0x%02x", exponent);
     printf(", fraction = 0x%06x\n", mantissa);
