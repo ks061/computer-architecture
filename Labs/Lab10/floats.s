@@ -1,3 +1,8 @@
+## Kartikeya Sharma
+## CSCI 206 - 1 PM
+## Lab 10 - floats.s
+## Lab Date: 3/26/19
+
 .text
 .global one_half_single
 .global one_half_double

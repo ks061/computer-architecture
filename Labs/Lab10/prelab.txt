@@ -1,3 +1,8 @@
+Kartikeya Sharma
+CSCI 206 - 1 PM
+Lab 10 - prelab.txt
+Lab Date: 3/26/19
+
 The assumption in this assignment, as supported by Professor Fuchsberger, is
 that we are only dealing with floating point representations that are normalized.
 
