@@ -102,8 +102,8 @@ void sum(void)
     int i;
     for (i = 0; i < 1000; i++)
     {
-	printf("IEEE754 sum: ");	
-	inspect_float(sum);
+        // printf("IEEE754 sum: ");	
+	// inspect_float(sum);
         sum += a;
     }
 
