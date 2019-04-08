@@ -1,0 +1,35 @@
+------------------------------------------------------------
+Lab08 feedback for Kartikeya Sharma (ks061)
+------------------------------------------------------------
+prelab: snode.h: snode.h has a working definition of struct snode and declaration for
+snode_create.
+	Score: 10 / 10
+	Comment: Great Work!
+
+prelab: snode.c: snode.c has a correct snode_create that uses malloc and strcpy; -3 if it does
+not set length, str, or next.
+	Score: 10 / 10
+	Comment: Not quite sure what you are doing with node->str[length]=0
+
+prelab: snode-test: snode-test works and compiles with a valid Makefile.
+	Score: 0 / 5
+	Comment: Lab08/prelab/snode-test.c not found.
+
+snond_test: snode.h / .c created and snode_test.c runs without memory leaks.
+	Score: 20 / 20
+	Comment: Great Work!
+
+slist: slist.h created with basic function heading list header, 5 points; slist.c
+completed correctly. Each of the functions create, destroy, add_front,
+add_back, traverse, find, length, 7 points each.
+	Score: 40 / 40
+	Comment: Great Work!
+
+song_list: song_list runs correctly (10 points) without memory leaks (5 points).
+	Score: 15 / 15
+	Comment: Great Work!
+
+------------------------------------------------------------
+TOTAL 95.0 / 100.0
+------------------------------------------------------------
+
