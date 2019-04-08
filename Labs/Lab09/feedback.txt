@@ -1,0 +1,27 @@
+------------------------------------------------------------
+Lab09 feedback for Kartikeya Sharma (ks061)
+------------------------------------------------------------
+bit_operations: Each of the five functions implemented and worked correctly, clear_bit_64,
+get_bit_32, get_bit_64, set_bit_32, set_bit_64, 5 points each.
+	Score: 30 / 30
+	Comment: Great Work!
+
+adder_and_multiplier: Functions full_adder (6 points), adder_32 (10 points), and multiplier_32 (14
+points) implemented and worked correctly.
+	Score: 30 / 30
+	Comment: Great Work!
+
+subtractor_and_divider: Functions twos_complement (6 points), subtractor_32 (10 points), and
+divider_32 (14 points) implemented and worked correctly.
+	Score: 30 / 30
+	Comment: Great Work!
+
+tester: File tester.c revised properly and the program tester runs correctly showing
+all the implemented functions, 10 points.
+	Score: 10 / 10
+	Comment: Great Work!
+
+------------------------------------------------------------
+TOTAL 100.0 / 100.0
+------------------------------------------------------------
+
