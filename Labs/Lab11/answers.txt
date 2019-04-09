@@ -1,0 +1,141 @@
+Name: Kartikeya Sharma
+Lab Section: 1 PM
+
+
+(1.1) The usage of 'char *fgets(char *s, int size, FILE *stream);' in over2.c deters the program from
+      reading more than the allocated size of the stream, which eliminates buffer overflow risk.
+      On the other hand, the usage of 'char *gets(char *s);' in over1.c allows the program to potentially
+      read more than the amount of memory allocated to the buffer, allowing potential exploits such as
+      those involving buffer overflow.
+
+(1.2) The usage of 'int scanf(const char *format, ...);' in over3.c allows the program to read in a
+      string of an indeterminate length; the function continues to read in characters from the string 
+      until a null character is encountered without the originally defined size of 10 characters.
+
+(1.3) The rule of thumb is whenever a function checks the size of the string/buffer being read, 
+      the function will more likely not be bufferflow exploitable.
+
+(1.4) The lesson is to ensure restricting the size of user input. In the case of head3.c and head4.c,
+      head4.c shows that one should restrict the amount of characters read in using the scanf function
+      by using the '%9s' phrase in the first parameter to the function.
+
+(1.5) The strcpy function overflows because it does not check the size of the array it copies in.    
+
+(2.1)
+
+&main = 0x55555a3c
+&i = 0x7fffe588
+&j = 0x7fffe58c
+&k = 0x7fffe56c
+&buf = 0x7fffe560
+
+(2.2) Per compiler convention, the arguments are pushed onto the stack right to left, where the right-most
+      parameter is stored deepest in the stack. a, b, c, d are stored in $a0, $a1, $a2, and $a3 respectively, whereas
+      j and i are pushed onto the stack (in that order respectively).
+
+(2.3) 
+
+&i = 0x7fffe588
+&j = 0x7fffe58c
+&buf[0] = 0x7fffe560
+$fp = 0x7fffe578
+$ra = 0x55555a8c
+
+return address is stored at 0x7fffe574
+
+(2.4) 
+
+0x7fffe588: 0x0b
+0x7fffe589: 0x00
+0x7fffe58a: 0x00
+0x7fffe58b: 0x00
+
+(2.5) Little endian because the address of 0x7fffe588 points to the least significant digit of the integer i (11 -> b).
+
+(2.6) The way to determine the endian convention of the processor is writing a piece of C code that creates a local variable
+      in the main function, compiling with gcc -g program.c -o program, opening gdb with gdb program, setting a breakpoint with
+      break main, running the program with r, printing the address of the local variable by entering p &<local variable name>,
+      pressing enter to allow gdb to continue running the program. If the address of the local variable holds the least significant
+      bit, one knows that the processor is little endian; otherwise, the processor is big endian.
+
+(2.7) 
+
+buf
+
+0x7fffe560: 0x00
+0x7fffe561: 0x00
+0x7fffe562: 0x00
+0x7fffe563: 0x00
+0x7fffe564: 0xc8
+0x7fffe565: 0x5b
+0x7fffe566: 0x55
+0x7fffe567: 0x55
+0x7fffe568: 0x00
+0x7fffe569: 0x00
+0x7fffe56a: 0x00
+0x7fffe56b: 0x00 
+
+k
+
+0x7fffe56c: 0x0c
+0x7fffe56d: 0x00
+0x7fffe56e: 0x00
+0x7fffe56f: 0x00
+
+fp
+
+0x7fffe570: 0x78
+0x7fffe571: 0xe5
+0x7fffe572: 0xff
+0x7fffe573: 0x7f
+
+ra
+
+0x7fffe574: 0x8c
+0x7fffe575: 0x5a
+0x7fffe576: 0x55
+0x7fffe577: 0x55
+
+(2.8) The value of ra (the return address) must be overridden to potentially make an arbitrary jump to an arbitary address.
+
+(2.9) Code injected into the program would be buffer overflowed into the stack segment.
+
+(2.10) The processor can execute instructions stored in memory outside the text segment and loads them in as such if the proper
+       return addresses, for instance, are modified on the stack that can redirect the program to load instructions from the
+       memory addresses at which the injected instructions are stored. The processor cannot, however, manipulate data stored in the
+       text segment because that is known as a segmentation fault. 
+
+(2.11) The address of buf[0] is now 0x55565e50, which means that it is far from
+       the stack and clearly on the data segment.
+
+(2.12) The return address is stored in the stack, so the return address itself cannot
+       be overflowed into the stack. However, instructions can be injected into
+       the data segment, and the return address can be altered through another buffer
+       overflow in the stack to cause the program to jump to the set of instructions
+       injected into the data segment.
+
+(3.1) The vulnerability of this program stems from the fact that command line arguments
+      are sequentially copied into a fixed sized buffer without regard to the size
+      allocated to the buffer in the character array declaration. Such continual
+      writing of characters passed the memory designated for the buffer results in
+      a buffer overflow, which can allow external programs calling such functions
+      to overwrite locations in the program memory.
+
+(3.2) The generalized mistake that is made is permitting the addition of bytes of data 
+      to a buffer without regard for the size of the buffer, as originally specified
+      in the declaration of the buffer.
+
+(3.3) Verified per rats output below.
+
+ks061@mips:~/unixspace/csci206/Labs/Lab11$ rats concat.c
+Entries in perl database: 33
+Entries in ruby database: 46
+Entries in python database: 62
+Entries in c database: 334
+Entries in php database: 55
+Analyzing concat.c
+Total lines analyzed: 53
+Total time 0.023472 seconds
+2258 lines per second 
+
+  
