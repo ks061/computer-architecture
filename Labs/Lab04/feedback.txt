@@ -1,0 +1,56 @@
+------------------------------------------------------------
+Lab04 feedback for Kartikeya Sharma (ks061)
+------------------------------------------------------------
+prelab: zyBook activities
+	Score: 25 / 25
+	Comment: Great Work!
+
+calc.c: Exercise 1: calc.c program works as described and follows good coding
+conventions. -5 if it does not compile or has warnings. -1 for each minor
+error. -2 for each significant error.
+	Score: 10 / 10
+	Comment: Great Work!
+
+head.c: Exercise 2: head.c program works as described and follows good coding
+conventions. -5 if it does not compile or has warnings. -1 for each minor
+error. -2 for each significant error.
+	Score: 10 / 10
+	Comment: Great Work!
+
+notes.txt: Exercise 2: notes.txt created and correctly describes creat, open, read,
+write, close (2 points each).
+
+Exercise 4: notes.txt correctly describes fopen(3), fgets(3), fprintf(3),
+fseek(3), and fclose(3) (2 points each).
+	Score: 20 / 20
+	Comment: Great Work!
+
+head2: Makefile created to compile head2.c using head2.o and fileio.o. -5 points for:
+gcc –Wall head2.c fileio.c –o head2.
+	Score: 5 / 5
+	Comment: Great Work!
+
+read_file_bytes: Exercise 3: read_file_bytes removed from head2.c and added to fileio.c.
+fileio.h has correct declaration with include guard.
+	Score: 5 / 5
+	Comment: Great Work!
+
+head3: Exercise 4: head3.c created and uses read_file_lines in fileio.c/.h to read
+lines using the standard libraries. -5 if it does not compile or has warnings.
+-1 for each minor error. -2 for each significant error.
+	Score: 10 / 10
+	Comment: Great Work!
+
+string_token: Exercise 5: string_token.c created; notes.txt updated with the output of the
+original string_token program which generates something like 1: Hello -->
+Hello 2: world, --> world 3: how --> how 4: are --> are 5: you? --> you . If
+notes.txt doesn't contain this segment, -4. Visually examine the source code
+string_token.c. If code style is bad, -2; if the program doesn't compile, -4;
+if the program compiles with warning(s), -2.
+	Score: 15 / 15
+	Comment: Great Work!
+
+------------------------------------------------------------
+TOTAL 100.0 / 100.0
+------------------------------------------------------------
+

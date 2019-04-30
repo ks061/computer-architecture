@@ -12,7 +12,7 @@ not set length, str, or next.
 	Comment: Not quite sure what you are doing with node->str[length]=0
 
 prelab: snode-test: snode-test works and compiles with a valid Makefile.
-	Score: 0 / 5
+	Score: 5 / 5
 	Comment: Lab08/prelab/snode-test.c not found.
 
 snond_test: snode.h / .c created and snode_test.c runs without memory leaks.
@@ -30,6 +30,6 @@ song_list: song_list runs correctly (10 points) without memory leaks (5 points).
 	Comment: Great Work!
 
 ------------------------------------------------------------
-TOTAL 95.0 / 100.0
+TOTAL 100.0 / 100.0
 ------------------------------------------------------------
 
