@@ -1,0 +1,44 @@
+Name: Kartikeya Sharma
+Section: 1 PM
+
+2.1: Increasing block size increases conflict misses because once it becomes
+     a significant portion of the cache size, there will be more blocks
+     competing for the same space. The data agrees with this assertion;
+     increasing the block size from 8 bytes to 64 bytes increased the 
+     conflict misses from 17,499 to 20,659.  Also, the compulsory misses 
+     decreased from 19,486 to 3,306 when the block size was increased from
+     8 bytes to 64 bytes because spacial locality preloaded the data near
+     past memory references. 
+
+2.2: Doubling the size of the cache (from 8K to 16K) increases the number
+     of indices where blocks can be stored, and therefore reduces the capacity
+     misses. This can be seen by the decrease in capacity misses from 32,088
+     to 13,339.
+
+2.3: Compulsory misses are not replaced by conflict misses (we can see this because
+     the amount of compulsory misses stays constant at 6,216 from cache size 32 KB
+     until cache size 512 KB) because the total capacity of the cache is much larger
+     than the amount of data being stored in the cache. Because the cache size increases,
+     capacity misses decrease from 933 to 0 because there are more indices where
+     blocks can be stored. Also, conflict misses decrease because there is less competition
+     for cache space among blocks now as the cache size increases; conflict misses
+     decreased from 1,239 to 64 when cache size increased from 32 KB to 512 KB.
+
+2.4: There are slightly more capacity misses that occur when increasing
+     the associativity from 1, 2, then 4, i.e. from 32088, 32338, and then
+     32742. The number of conflict misses significantly increases from 17499,
+     25991, and then 45140. There is much data competing for storage in
+     a relatively small cache, i.e. only of size 8 KB.
+
+2.5: Compulsory misses are not replaced by conflict misses (we can see this because
+     the amount of compulsory misses stays consistent at 19,486 from associativity
+     1, 2, and then 4) because the total capacity of the cache is much larger than the
+     amount of data being stored in the cache; the 8 KB cache in 2.4 simply did not have
+     enough space to store data in the cache hence why there were more misses. Capacity
+     misses were significantly lower also because the total capacity of the cache is much
+     larger than the amount of data trying to be stored in the cache. Finally, the number of
+     conflict misses was substantially lowered with increased associativity (and block size
+     relative to 2.4) because associativity increases the number of possible places that data
+     can be stored if a potential conflict arises.  
+
+
