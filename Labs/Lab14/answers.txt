@@ -1,6 +1,10 @@
 Name: Kartikeya Sharma
 Section: 1 PM
 
+Please see 2.1.pdf, 2.2.pdf, 2.3.pdf, 2.4.pdf, 2.5.pdf, and 3.pdf to 
+see the data and graphs related to my analyses for each of these questions.
+Thank you in advance.
+
 2.1: Increasing block size increases conflict misses because once it becomes
      a significant portion of the cache size, there will be more blocks
      competing for the same space. The data agrees with this assertion;
@@ -41,4 +45,56 @@ Section: 1 PM
      relative to 2.4) because associativity increases the number of possible places that data
      can be stored if a potential conflict arises.  
 
+3:   First, the naive results were examined, and a result that had a relatively low amount of
+     misses was chosen. For the purposes of making the benchmark-blocked program achieve a
+     cache performance level similar to the naive program using a smaller cache, the following
+     result was chosen from the naive analysis due to its low overall demand misses:
+     
+     Block Size: 32 bytes
+     Associativity Set Size: 1
+     Cache Size: 128 KB
+     Demand Misses: 6950
+       Compulsory Misses: 6216
+       Capacity Misses: 22
+       Conflict Misses: 712
 
+     Because the lab asks to choose a smaller cache size (than 128 KB in this case) to improve
+     the cache performance of the benchmark-blocked program, 32 KB was chosen as the cache size.
+     To provide additional justification, when 16 KB or 8 KB were chosen (keeping block size
+     at 64 bytes and associativity set size at 4), demand misses significantly increased from
+     4483 (32 KB cache size), to 12128 (16 KB cache size), and to 37651 (8 KB cache size). Choosing
+     too small of a cache results in increased capacity misses and conflict misses because there
+     is much data that is trying to be stored in the cache competing for less space. 
+
+     Now that the cache size is fixed to 32 KB, one can begin varying the block size and associativity
+     set size. Let us look at the data for fixed associativity set size of 1. As the block size
+     is increased in size from 8 bytes, to 16 bytes, to 32 bytes, and then 64 bytes, the demand
+     misses decrease from 23,943, to 15,147, to 8,946, and then to 5,865. By increasing the block
+     size, compulsory misses, for one, are reduced by using spacial locality to preload data near
+     past memory references. The conflict misses decrease because there are less units being stored
+     (but more stored in each unit with the increased block size), so there will naturally be less
+     possible conflicts when storing each block. The capacity misses also decrease.
+
+     Now, let us look at the data (still for fixed cache size of 32 KB) for fixed block size of 
+     64 bytes. The demand misses decrease from 5865 (associativity set size of 1), to 4917
+     (associativity set size of 2), and to 4483 (associativity set size of 4). The primary reason
+     for this is that the conflict misses decrease from 1653 (associativity set size of 1), to 
+     671 (associativity set size of 2), and then to 239 (associativity set size of 4). The
+     decrease in the conflict misses, in turn, is due to the increases in the number of possible
+     places that data can be stored if a potential conflict arises within each set in the
+     associative cache arrangement.
+
+     The following optimized result of the benchmark program was better than the cache performance
+     of the naive program:
+
+     Block Size: 64 bytes
+     Associativity Set Size: 4
+     Cache Size: 32 KB
+     Demand Misses: 4483
+       Compulsory Misses: 3305
+       Capacity Misses: 939
+       Conflict Misses: 239
+
+     Hence, the benchmark program has successfully been optimized near the cache performance of the
+     naive program by keeping a low enough cache size of 32 KB while increasing the block size
+     from 32 bytes to 64 bytes and increasing the associativity set size from 1 to 4.
